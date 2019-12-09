@@ -5,6 +5,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set visualbell
+set ff=unix
+set ff=unix,dos
 
 if has("gui_running")
     if has("win32")
