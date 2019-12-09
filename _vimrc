@@ -5,8 +5,10 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set visualbell
-set ff=unix
-set ff=unix,dos
+set fileformat=unix
+set fileformats=unix,dos
+
+let maplocalleader = "\<Space>"
 
 if has("gui_running")
     if has("win32")
@@ -27,6 +29,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'tpope/vim-fugitive'
     Plug 'dense-analysis/ale'
+    Plug 'lervag/vimtex'
 call plug#end()
 
 colorscheme nord
