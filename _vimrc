@@ -1,3 +1,6 @@
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
 syntax on
 set autoindent
 set nu rnu
@@ -53,3 +56,5 @@ let g:vimtex_compiler_latexmk = {
         \ ],
         \}
 
+
+let g:vimtex_view_method = 'mupdf'
