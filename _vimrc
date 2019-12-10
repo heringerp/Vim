@@ -8,7 +8,7 @@ set visualbell
 set fileformat=unix
 set fileformats=unix,dos
 
-let maplocalleader = "\<Space>"
+let maplocalleader = "\\"
 
 if has("gui_running")
     if has("win32")
@@ -34,3 +34,22 @@ call plug#end()
 
 colorscheme nord
 let g:airline#extensions#tabline#enabled = 1
+let g:tex_flavor = 'latex'
+
+let g:vimtex_compiler_latexmk = {
+        \ 'backend' : 'jobs',
+        \ 'background' : 1,
+        \ 'build_dir' : '',
+        \ 'callback' : 1,
+        \ 'continuous' : 1,
+        \ 'executable' : 'latexmk',
+        \ 'hooks' : [],
+        \ 'options' : [
+        \   '-verbose',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \   '-shell-escape',
+        \ ],
+        \}
+
