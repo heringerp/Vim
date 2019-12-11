@@ -10,6 +10,7 @@ set expandtab
 set visualbell
 set fileformat=unix
 set fileformats=unix,dos
+set cursorline
 
 let maplocalleader = "\\"
 
