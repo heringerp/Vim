@@ -10,6 +10,16 @@ set expandtab
 set visualbell
 set fileformat=unix
 set fileformats=unix,dos
+set cursorline
+set spelllang=en_us,de_de
+let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
+
+nnoremap <F2> :bprev<Enter>
+nnoremap <F3> :bnext<Enter>
+nnoremap <F4> :bd<Enter>
+
+
+set spell
 
 let maplocalleader = "\\"
 
@@ -33,6 +43,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'dense-analysis/ale'
     Plug 'lervag/vimtex'
+    Plug 'ewilazarus/preto'
 call plug#end()
 
 colorscheme nord
@@ -58,3 +69,9 @@ let g:vimtex_compiler_latexmk = {
 
 
 let g:vimtex_view_method = 'mupdf'
+
+ " Disable overfull/underfull \hbox and all package warnings
+let g:vimtex_quickfix_latexlog = {
+      \ 'overfull' : 0,
+      \ 'underfull' : 0,
+      \}
