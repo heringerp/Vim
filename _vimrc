@@ -1,6 +1,8 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
+set encoding=utf-8
+
 syntax on
 set autoindent
 set nu rnu
