@@ -16,9 +16,14 @@ set cursorline
 set spelllang=en_us,de_de
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
 
+set fo+=t
+set tw=99
+
 nnoremap <F2> :bprev<Enter>
 nnoremap <F3> :bnext<Enter>
 nnoremap <F4> :bd<Enter>
+nnoremap <F5> :call ToggleColorScheme()<Enter>
+nnoremap - whxi<Enter><Esc>Jx
 
 
 set spell
@@ -77,3 +82,21 @@ let g:vimtex_quickfix_latexlog = {
       \ 'overfull' : 0,
       \ 'underfull' : 0,
       \}
+
+function! ToggleColorScheme()
+    try
+        if g:colors_name == "nord"
+            colorscheme preto
+            highlight Cursor guifg=black guibg=white
+            AirlineToggle
+        elseif g:colors_name == "preto"
+            colorscheme nord
+            AirlineToggle
+            AirlineTheme nord
+            let g:airline#extensions#tabline#enabled = 1
+        endif
+    catch /^Vim:E121/
+        echo "default"
+    endtry
+
+endfunction
